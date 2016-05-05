@@ -1,11 +1,11 @@
 user:
-nome-
-endereço-
-cep-
-cpf-
-e.mail-
-senha-
-id-
+nome
+endereço
+cep
+cpf
+e-mail
+senha
+id
 
 produto:
 id
