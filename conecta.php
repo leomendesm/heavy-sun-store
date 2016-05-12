@@ -1,3 +1,3 @@
 <?php
-    $con = new mysql("localhost","root","","heavy");
+    $con = new mysqli("localhost","root","","heavy");
 ?>
