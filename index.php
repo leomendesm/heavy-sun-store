@@ -113,21 +113,21 @@ include('conecta.php');
             <div>
                 <form name="eoq" class="col s12" method="post" action="criar.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s6">
                             <input id="nome" type="text" class="validate" name="nome">
                             <label for="nome">Nome do produto</label>
                         </div>
-
-                        <div class="input-field col s12">
-                            <textarea id="textarea1" class="materialize-textarea" name="desc"></textarea>
-                            <label for="textarea1">Descrição do produto</label>
-                        </div>
-
                         <div class="input-field col s6">
                             <i class="material-icons prefix">attach_money</i>
                             <input id="icon_prefix" type="number" class="validate" name="valor" placeholder="10.00">
                             <label for="icon_prefix">Valor</label>
                         </div>
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea" name="desc"></textarea>
+                            <label for="textarea1">Descrição do produto</label>
+                        </div>
+
+                        
                     </div>
                     <div class="file-field input-field l6">
                         <div class="btn">
