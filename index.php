@@ -33,10 +33,10 @@
                 </div>
                 <div class="nav-wrapper black">
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="loja.html" class="<?=$hide?>">Minha Conta</a></li>
-                        <li><a href="#mlogin" class="modal-trigger <?=$nhide?>">login</a></li>
-                        <li><a href="#mcad" class="modal-trigger <?=$nhide?>">Cadastrar</a></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li><a href="conta.php" class="<?=$hide?>">MINHA CONTA</a></li>
+                        <li><a href="#mlogin" class="modal-trigger <?=$nhide?>">LOGIN</a></li>
+                        <li><a href="#mcad" class="modal-trigger orange-text <?=$nhide?>">CADASTRE-SE</a></li>
                         <li><a href="#"><i class="material-icons">search</i></a></li>
                         <li><a href="#"><i class="material-icons <?=$hide?>">shopping_cart</i></a></li>
                     </ul>
@@ -46,7 +46,7 @@
             <ul id="nav-mobile" class="side-nav fixed">
                 <ul id="slide-out" class="side-nav fixed">
                     <li class="logo black center">
-                        <a href="index.html" id="logo-container"><img src="img/logo.png"></a>
+                        <a href="index.php" id="logo-container"><img src="img/logo.png"></a>
                         <br>
                     </li>
                     <li><a class="black white-text" href="#!"><b>MASCULINO</b></a></li>
@@ -107,7 +107,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer"><a id="submit" class="waves-effect waves-light btn">Confirmar</a>
+                <div class="modal-footer"><a id="submit" class="waves-effect waves-light btn orange darken-3">Confirmar</a>
                 </div>
             </div>
             <div id="mlogin" class="modal">
@@ -139,13 +139,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a class="waves-effect waves-light btn">Confirmar</a>
-                    <a href="#!" class=" modal-action modal-close btn-flat">Cancelar</a>
+                    <a class="waves-effect waves-light btn orange darken-3">Confirmar</a>                    
                 </div>
             </div>
+            <img class="responsive-img" src="img/background1.jpg">
+            <img class="responsive-img" src="img/frete.png">
             <div class="container">
-                <img class="responsive-img" src="img/background1.jpg">
-                <img class="responsive-img" src="img/frete.png">
+                
                 <div class="col s12 m9 l10">
                     <div class="row">
                         <?php
