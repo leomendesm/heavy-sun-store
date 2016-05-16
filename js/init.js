@@ -6,21 +6,24 @@
         $('select').material_select();
         $("#cep").mask("99999-999");
         $("#cpf").mask("999.999.999-99");
+        $('#acc').hide();
+        $('#shop').hide();
+        $('#logout').hide();
         $("#erro").hide();
         $('#submit').click(function () {
             $('#prog_reg').show();
-            var nome = $('#nome').val(); //Pega valor do campo nome
-            var email = $('#email').val(); //Pega valor do campo email
-            var senha = $('#pass').val(); //Pega valor do campo senha
-            var csenha = $('#cpass').val(); //Pega valor do campo confirmar senha
-            var end = $('#end').val(); //Pega valor do campo endereço
-            var cep = $('#cep').val(); //Pega valor do campo cep
-            var cpf = $('#cpf').val(); //Pega valor do campo cpf
-            $.ajax({ //Função AJAX
-                url: "register.php", //Arquivo php
-                type: "post", //Método de envio
-                data: "nome=" + nome + "&senha=" + senha + "&email=" + email + "&csenha=" + csenha + "&end=" + end + "&cep=" + cep + "&cpf=" + cpf
-                , success: function (result) { //Sucesso no AJAX
+            var nome = $('#nome').val();
+            var email = $('#email').val();
+            var senha = $('#pass').val();
+            var csenha = $('#cpass').val();
+            var end = $('#end').val();
+            var cep = $('#cep').val();
+            var cpf = $('#cpf').val();
+            $.ajax({
+                url: "register.php",
+                type: "post",
+                data: "nome=" + nome + "&senha=" + senha + "&email=" + email + "&csenha=" + csenha + "&end=" + end + "&cep=" + cep + "&cpf=" + cpf,
+                success: function (result) {
                     if (result == 1) {
                         $('#modal1').closeModal();
                         $('#modal2').openModal();
@@ -29,26 +32,30 @@
                     }
                 }
             })
-            return false; //Evita que a página seja atualiza
+            return false;
         })
     });
     $('#logar').click(function () {
-        $('#prog_reg').show();
-        var senha = $('#lsenha').val(); //Pega valor do campo nome
-        var email = $('#email').val(); //Pega valor do campo email
-        $.ajax({ //Função AJAX
-            url: "logar.php", //Arquivo php
-            type: "post", //Método de envio
-            data: "senha=" + senha + "&email=" + email
-            , success: function (result) { //Sucesso no AJAX
+        var senha = $('#lsenha').val();
+        var email = $('#lemail').val();
+        $.ajax({
+            url: "logar.php",
+            type: "post",
+            data: "senha=" + senha + "&email=" + email, 
+            success: function (result) {
+                console.log(result);
                 if (result == 1) {
-                    $('#modal1').closeModal();
-                    $('#modal2').openModal();
+                    $('#mlogin').closeModal();
+                    $('#cad').hide();
+                    $('#log').hide();
+                    $('#acc').show();
+                    $('#shop').show();
+                    $('#logout').show();
                 } else {
                     $('#erro').show();
                 }
             }
         })
-        return false; //Evita que a página seja atualiza
+        return false;
     });
-})(jQuery); // end of jQuery name space
+})(jQuery);

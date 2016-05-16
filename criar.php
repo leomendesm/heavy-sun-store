@@ -8,8 +8,8 @@
         if ($_FILES["foto"]["error"]==0) {
             $ext = substr($_FILES["foto"]["name"], strpos(strrev($_FILES["foto"]["name"]),".")*-1);
             $foto = md5(time().$_FILES["foto"]["name"]).".".$ext;
-            move_uploaded_file($_FILES["foto"]["tmp_name"], "imagens/".$foto);
-        } else { 
+            move_uploaded_file($_FILES["foto"]["tmp_name"], "uploads/".$foto);
+        } else {
             $foto ="nouser.png";
         }
         $query = "INSERT INTO produto(nome, descri, preco, foto) VALUES ('$nome','$descri','$preco','$foto')";
