@@ -25,8 +25,8 @@
                 data: "nome=" + nome + "&senha=" + senha + "&email=" + email + "&csenha=" + csenha + "&end=" + end + "&cep=" + cep + "&cpf=" + cpf,
                 success: function (result) {
                     if (result == 1) {
-                        $('#modal1').closeModal();
-                        $('#modal2').openModal();
+                        $('#mcad').closeModal();
+                        $('#mlogin').openModal();
                     } else {
                         $('#erro').show();
                     }
@@ -38,6 +38,8 @@
     $('#logar').click(function () {
         var senha = $('#lsenha').val();
         var email = $('#lemail').val();
+        console.log(senha);
+        console.log(email);
         $.ajax({
             url: "logar.php",
             type: "post",

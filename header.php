@@ -26,9 +26,9 @@
                 </div>
                 <div class="nav-wrapper black">
                     <ul class="right hide-on-med-and-down">
-                        <li><a  class="white-text" href="index.php">HOME</a></li>
-                        <li id="acc"><a  class="white-text" href="conta.php" >MINHA CONTA</a></li>
-                        <li id="logout"><a class="white-text" href="logout.php" >LOGOUT</a></li>
+                        <li><a class="white-text" href="index.php">HOME</a></li>
+                        <li id="acc"><a class="white-text" href="conta.php">MINHA CONTA</a></li>
+                        <li id="logout"><a class="white-text" href="logout.php">LOGOUT</a></li>
                         <li id="log"><a href="#mlogin" class="modal-trigger white-text">LOGIN</a></li>
                         <li id="cad"><a href="#mcad" class="modal-trigger orange-text">CADASTRE-SE</a></li>
                         <li><a href="#"><i class="material-icons white-text">search</i></a></li>
@@ -53,5 +53,85 @@
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </header>
-
+        <div id="mcad" class="modal">
+            <div class="modal-content">
+                <h4>Cadastro</h4>
+                <div>
+                    <form class="col s12" id="formregister">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="nome" type="text" class="validate" name="nome">
+                                <label for="nome">Nome Completo</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l6">
+                                <input id="pass" type="password" class="validate" name="senha">
+                                <label for="pass">Senha</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <input id="cpass" type="password" class="validate" name="csenha">
+                                <label for="cpass">Confirmar Senha</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="end" type="text" class="validate" name="enderec">
+                                <label for="end">Endereço</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l6">
+                                <input id="cep" type="text" class="validate" name="cep">
+                                <label for="cep">CEP</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <input id="cpf" type="text" class="validate" name="cpf">
+                                <label for="cpf">CPF</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer"><a id="submit" class="waves-effect waves-light btn orange darken-3">Confirmar</a>
+            </div>
+        </div>
+        <div id="mlogin" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4>
+                <div>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="lemail" type="email" class="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="lsenha" type="password" class="validate" name="senha">
+                                <label for="lsenha">Senha</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>
+                                    <input type="checkbox" id="test6" name="remember" />
+                                    <label for="test6">Lembrar-se</label>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="logar" class="waves-effect waves-light btn orange darken-3">Confirmar</a>
+            </div>
+        </div>
         <main>
