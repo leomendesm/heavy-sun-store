@@ -1,26 +1,29 @@
 <?php
-    session_start();
-    include "conecta.php";
+    include "header.php";
     if (!empty($_POST)){
         $nome = $_POST["nome"];
         $descri = $_POST["desc"];
         $preco = $_POST["valor"];
+        $fotoantiga = $_POST["fotoantiga"];
+        $id = $_POST["id"];
         if ($_FILES["foto"]["error"]==0) {
             $ext = substr($_FILES["foto"]["name"], strpos(strrev($_FILES["foto"]["name"]),".")*-1);
             $foto = md5(time().$_FILES["foto"]["name"]).".".$ext;
             move_uploaded_file($_FILES["foto"]["tmp_name"], "uploads/".$foto);
+            unlink('uploads/'.$fotoantiga);
         } else {
-            $foto ="nouser.png";
+            $foto ="noprod.png";
         }
-        $query = "INSERT INTO produto(nome, descri, preco, foto) VALUES ('$nome','$descri','$preco','$foto')";
+        $query = "update produto set nome = '$nome', descri = '$descri', preco = '$preco', foto = '$foto' where id = $id";
         $run = $con->query($query);
         if($run){
-            echo "Criado com sucesso!";
+            echo "Atualizado com sucesso!";
             exit;
         }else{
-            echo "Falha ao criar produto";
+            echo "Falha ao atualizar produto";
         }
     }else{
-     echo "qwe";
+     header('location: index.php');
     }
+    include('footer.php');
 ?>

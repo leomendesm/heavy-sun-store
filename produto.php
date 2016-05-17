@@ -41,7 +41,7 @@ if($cont == 1){
                 <br>
                 <br>
                 <input type="hidden" id="idprod" value="<?= $fetch['id'] ?>">
-                <a id="comprar" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left white-text">shopping_cart</i>COMPRAR</a>
+                <a id="comprar" class="waves-effect waves-light btn orange darken-3  <?= (isset($_SESSION['id']))? "":"disabled" ?>"><i class="material-icons left white-text">shopping_cart</i>COMPRAR</a>
             </div>
 
             <div class="col s12 m12 l12">
@@ -64,3 +64,4 @@ echo"<center><h3>Produto não encontrado</h3></center>";
 }
     include("footer.php");
 ?>
+

@@ -41,7 +41,7 @@
             $("#logout").show();
             $('#log').hide();
             $("#cad").hide();
-            
+            $('#comprar').removeClass("disabled");   
         }
     })
         })(jQuery);
