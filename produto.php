@@ -30,7 +30,7 @@ if($cont == 1){
             <div class="col s12 m4 l4 center">
                 <h3 class="orange-text darken-3"><b>R$<?= $fetch['preco'] ?></b></h3> Escolha um <b>TAMANHO</b>
                 <div class="input-field">
-                    <select>
+                    <select id="selecttam">
                         <option value="" disabled selected>--</option>
                         <?= ($estoque['p'] > 0)? "<option value='p'>P</option>":"" ?>
                         <?= ($estoque['m'] > 0)? "<option value='m'>M</option>":"" ?>
@@ -40,7 +40,8 @@ if($cont == 1){
                 </div>
                 <br>
                 <br>
-                <a class="waves-effect waves-light btn orange darken-3" href="add_car.php?prod=<?= $fetch['id'] ?>"><i class="material-icons left white-text">shopping_cart</i>COMPRAR</a>
+                <input type="hidden" id="idprod" value="<?= $fetch['id'] ?>">
+                <a id="comprar" class="waves-effect waves-light btn orange darken-3"><i class="material-icons left white-text">shopping_cart</i>COMPRAR</a>
             </div>
 
             <div class="col s12 m12 l12">

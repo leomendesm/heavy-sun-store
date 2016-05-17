@@ -60,4 +60,25 @@
         })
         return false;
     });
+    $('#comprar').click(function () {
+        var idprod = $('#idprod').val();
+        var tam = $('#selecttam').val();
+        if(tam != null){
+        console.log(tam);
+        $.ajax({
+            url: "add_car.php",
+            type: "post",
+            data: "idprod=" + idprod + "&tamanho=" + tam,
+            success: function (result) {
+                console.log(result);
+                if (result == 1) {
+                 Materialize.toast('Item Adicionado ao Carrinho', 3000);
+                } else {
+                 Materialize.toast('Algo deu errado!', 3000);
+                }
+            }
+        })
+        return false;
+        }
+    });
 })(jQuery);
