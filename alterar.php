@@ -1,5 +1,5 @@
 <?php
-    include("header.php");
+    include("head.php");
     $id = $_SESSION['id'];
     $sql = "select * from user where id = $id";
     $run = $con->query($sql);
@@ -51,7 +51,7 @@
                                     <label for="cpass">Confirmar Senha</label>
                                 </div>
                             </div>
-                            <div class="modal-footer"><input type="submit" class="waves-effect waves-light btn orange darken-3 right" value="Confirmar">
+                            <div class="modal-footer"><input type="submit" class="waves-effect waves-light btn orange darken-3 right" value="Confirmar"></div>
                         </form>
                         <br><br><br><br>
                     </div>                   

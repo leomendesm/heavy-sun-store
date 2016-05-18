@@ -1,5 +1,5 @@
 <?php
-    include "header.php";
+    include "head.php";
     if (!empty($_POST)){
         $nome = $_POST["nome"];
         $descri = $_POST["desc"];

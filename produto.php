@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("head.php");
 if(!isset($_GET['id'])){
     header('location: index.php');
 }

@@ -1,4 +1,4 @@
-<?php include'header.php' ?>
+<?php include'head.php' ?>
 
     <div class="container">
     <img class="responsive-img hide center" src="img/background1.jpg">

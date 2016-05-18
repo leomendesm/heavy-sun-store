@@ -3,10 +3,11 @@
     include "conecta.php";
     if (!empty($_POST)){
         $idprod = $_POST["idprod"];
-        $sexo = $_POST["sexo"];
-        $quantia = $_POST["quantia"];
-        $tamanho = $_POST["tamanho"];
-        $query = "INSERT INTO estoque(id_prod, tamanho, quantia, Sexo) VALUES ('$idprod','$tamanho','$quantia','$sexo')";
+        $p = $_POST["p"];
+        $m = $_POST["m"];
+        $g = $_POST["g"];
+        $gg = $_POST["gg"];
+        $query = "INSERT INTO estoque(id_prod, p, m, g, gg) VALUES ('$idprod','$p','$m','$g','$gg')";
         $run = $con->query($query);
         if($run){
             echo "Criado com sucesso!";

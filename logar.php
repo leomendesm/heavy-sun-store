@@ -13,13 +13,14 @@
             $_SESSION['nome'] = $fetch["nome"];
             $_SESSION['email'] = $fetch["email"];
             $_SESSION['ender'] = $fetch["end"];
-            $_SESSION['cep ']= $fetch["cep"];
-            $_SESSION['cpf ']= $fetch["cpf"];
-            echo 1;
+            $_SESSION['cep']= $fetch["cep"];
+            $_SESSION['cpf']= $fetch["cpf"];
+            $_SESSION['auto']= $fetch["auto"];
+            echo $_SESSION['auto'];
             }else{
-           echo 2;
+           echo 'erro';
 	   }
     }else{
-           echo 3; 
+           echo 'erro';
     }
 ?>

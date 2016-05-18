@@ -2,7 +2,7 @@
 
 <html lang="en">
 <?php
-include('header.php');
+include('head.php');
 if(isset($_POST['prodaltera'])){
     $idprod = $_POST['prodaltera'];
     $sql = "select * from produto where id = $idprod";
