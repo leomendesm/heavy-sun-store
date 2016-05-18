@@ -1,0 +1,10 @@
+cruds 
+produto - ok;
+user - ok;
+estoque - deletar;
+carrinho - deletar e update; 
+checkout - insert;
+
+design:
+- view do checkout;
+- view do carrinho (lista com valor pra alteração e remoção);
