@@ -78,6 +78,7 @@
                 type: "post",
                 data: "idprod=" + idprod + "&tamanho=" + tam,
                 success: function (result) {
+                    console.log(result);
                     if (result == 1) {
                         Materialize.toast('Item Adicionado ao Carrinho', 3000);
                     } else {

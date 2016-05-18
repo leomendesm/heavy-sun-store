@@ -177,7 +177,7 @@ include('head.php');
                 <div id="form-remove-produto" class="col l6">
                     <h4>Remover Do Estoque</h4>
                     <div>
-                        <form class="col s12" method="post" action="removerproduto.php">
+                        <form class="col s12" method="post" action="removerestoque.php">
                             <div class="row">
                                 <div class="input-field col s6 m6 l12">
                                     <select class="icons" name="iddelete">
