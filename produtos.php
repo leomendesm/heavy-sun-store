@@ -4,10 +4,10 @@
 <?php
 include('head.php');
     if(!isset($_SESSION['auto'])){
-        echo"<script>location.href = 'http://www.google.com'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
     }else{
         if($_SESSION['auto'] != 1){
-        echo"<script>location.href = 'http://www.google.com'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/index.php";
         }
     }
 ?>
@@ -27,13 +27,13 @@ include('head.php');
                     <div>
                         <form name="eoq" class="col s12" method="post" action="criar.php" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="input-field col s6">
+                                <div class="input-field col s12 l6">
                                     <input id="nome" type="text" class="validate" name="nome">
                                     <label for="nome">Nome do produto</label>
                                 </div>
-                                <div class="input-field col s6">
+                                <div class="input-field col s12 l6">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="icon_prefix" type="number" class="validate" name="valor" placeholder="10.00">
+                                    <input id="icon_prefix" type="number" class="validate" name="valor" placeholder="10.00" step="any" min="0">
                                     <label for="icon_prefix">Valor</label>
                                 </div>
                                 <div class="input-field col s12">
@@ -58,13 +58,13 @@ include('head.php');
                 </div>
             </div>
             <div class="container">
-                <div id="form-atualiza-produto" class="col l6">
+                <div id="form-atualiza-produto" class="col s12 l6">
                     <br>
                     <h4>Atualizar produto</h4>
                     <div>
                         <form class="col s12" method="post" action="form_atualiza_produto.php">
                             <div class="row">
-                                <div class="input-field col s6 m6 l12">
+                                <div class="input-field col s12 m12 l12">
                                     <select class="icons" name="prodaltera">
                                         <option value="" disabled selected>Produto</option>
                                         <?php
@@ -82,12 +82,12 @@ include('head.php');
                     </div>
                 </div>
                 <br>
-                <div id="form-remove-produto" class="col l6">
+                <div id="form-remove-produto" class="col s12 m12 l6">
                     <h4>Remover produto</h4>
                     <div>
                         <form class="col s12" method="post" action="removerproduto.php">
                             <div class="row">
-                                <div class="input-field col s6 m6 l12">
+                                <div class="input-field col s12 m12 l12">
                                     <select class="icons" name="iddelete">
                                         <option value="" disabled selected>Produto</option>
                                         <?php
@@ -150,13 +150,13 @@ include('head.php');
                 </div>
             </div>
             <div class="container">
-                <div id="form-atualiza-produto" class="col l6">
+                <div id="form-atualiza-produto" class="col s12 m12 l6">
                     <br>
                     <h4>Atualizar Estoque</h4>
                     <div>
                         <form class="col s12" method="post" action="form_atualiza_estoque.php">
                             <div class="row">
-                                <div class="input-field col s6 m6 l12">
+                                <div class="input-field col s12 m12 l12">
                                     <select class="icons" name="idestoque">
                                         <option value="" disabled selected>Produto</option>
                                         <?php
@@ -173,13 +173,12 @@ include('head.php');
                         </form>
                     </div>
                 </div>
-                <br>
-                <div id="form-remove-produto" class="col l6">
+                <div id="form-remove-produto" class="col s12 m12 l6">
                     <h4>Remover Do Estoque</h4>
                     <div>
                         <form class="col s12" method="post" action="removerestoque.php">
                             <div class="row">
-                                <div class="input-field col s6 m6 l12">
+                                <div class="input-field col s12 m12 l12">
                                     <select class="icons" name="iddelete">
                                         <option value="" disabled selected>Produto</option>
                                         <?php
@@ -197,10 +196,18 @@ include('head.php');
                             <br>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
-        <br>
         <?php
     include('footer.php');
 ?>
+        <script>
+        (function ($) {
+        $(function () {
+            $('footer').hide();
+        })
+    })(jQuery);
+
+        </script>
