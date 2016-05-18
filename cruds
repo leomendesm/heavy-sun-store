@@ -8,3 +8,5 @@ checkout - insert;
 design:
 - view do checkout;
 - view do carrinho (lista com valor pra alteração e remoção);
+
+trigger ao criar checkout deletar todos os itens do carrinho e atualizar estoque;
