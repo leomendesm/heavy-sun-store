@@ -6,13 +6,17 @@
         $preco = $_POST["valor"];
         $fotoantiga = $_POST["fotoantiga"];
         $id = $_POST["id"];
-        if ($_FILES["foto"]["error"]==0) {
-            $ext = substr($_FILES["foto"]["name"], strpos(strrev($_FILES["foto"]["name"]),".")*-1);
-            $foto = md5(time().$_FILES["foto"]["name"]).".".$ext;
-            move_uploaded_file($_FILES["foto"]["tmp_name"], "uploads/".$foto);
-            unlink('uploads/'.$fotoantiga);
-        } else {
-            $foto ="noprod.png";
+        if(!empty($_FILES["foto"]["name"])){
+            if ($_FILES["foto"]["error"]==0) {
+                $ext = substr($_FILES["foto"]["name"], strpos(strrev($_FILES["foto"]["name"]),".")*-1);
+                $foto = md5(time().$_FILES["foto"]["name"]).".".$ext;
+                move_uploaded_file($_FILES["foto"]["tmp_name"], "uploads/".$foto);
+                if($fotoantiga != 'nouser.png'){
+                    unlink('uploads/'.$fotoantiga);
+                }
+            }
+        }else{ 
+            $foto = $fotoantiga;
         }
         $query = "update produto set nome = '$nome', descri = '$descri', preco = '$preco', foto = '$foto' where id = $id";
         $run = $con->query($query);
