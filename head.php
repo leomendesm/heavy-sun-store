@@ -33,7 +33,7 @@
                         <li id="log"><a href="#mlogin" class="modal-trigger white-text">LOGIN</a></li>
                         <li id="cad"><a href="#mcad" class="modal-trigger orange-text">CADASTRE-SE</a></li>
                         <li><a href="#"><i class="material-icons white-text">search</i></a></li>
-                        <li id="shop"><a href="#"><i class="material-icons white-text">shopping_cart</i></a></li>
+                        <li id="shop"><a href="cart.php"><i class="material-icons white-text">shopping_cart</i></a></li>
                     </ul>
                 </div>
             </nav>
