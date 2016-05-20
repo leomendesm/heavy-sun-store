@@ -1,5 +1,8 @@
 <?php
     include "head.php";
+    if(!isset($_SESSION['id'])){
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
     if (!empty($_POST)){
         $nome = $_POST["nome"];
         $descri = $_POST["desc"];

@@ -1,6 +1,8 @@
 <?php
-    session_start();
     include "conecta.php";
+    if(!isset($_SESSION['id'])){
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
     $id = $_SESSION['id'];
     if (!empty($_POST) && $id != ''){
         $nome = $_POST["anome"];

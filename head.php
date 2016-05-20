@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    if(empty($_SESSION)){session_start();}
     include('conecta.php');
 ?>
 

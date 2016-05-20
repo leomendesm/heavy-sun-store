@@ -1,6 +1,8 @@
 <?php
-    session_start();
     include "head.php";
+    if(!isset($_SESSION['id'])){
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
     if (!empty($_POST)){
         $idestoque = $_POST["idestoque"];
         $p = $_POST["p"];

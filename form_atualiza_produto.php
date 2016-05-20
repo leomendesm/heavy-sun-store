@@ -3,6 +3,9 @@
 <html lang="en">
 <?php
 include('head.php');
+    if(!isset($_SESSION['id'])){
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
 if(isset($_POST['prodaltera'])){
     $idprod = $_POST['prodaltera'];
     $sql = "select * from produto where id = $idprod";

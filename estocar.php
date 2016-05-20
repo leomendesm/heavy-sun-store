@@ -1,6 +1,8 @@
 <?php
-    session_start();
     include "conecta.php";
+    if(!isset($_SESSION['id'])){
+        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
     if (!empty($_POST)){
         $idprod = $_POST["idprod"];
         $p = $_POST["p"];

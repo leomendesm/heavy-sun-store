@@ -1,5 +1,8 @@
 <?php
     include("head.php");
+    if(!isset($_SESSION['id'])){
+            echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    }
     $id = $_SESSION['id'];
     $sql = "select * from user where id = $id";
     $run = $con->query($sql);
