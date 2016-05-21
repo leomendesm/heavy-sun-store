@@ -32,14 +32,14 @@
     (function ($) {
         $(function () {
             var islog = <?php
-            if (isset($_SESSION["id"])) {
+            if(isset($_SESSION["id"])) {
                 echo $_SESSION["id"];
-            } ?>;
+            }else{ echo "null"; }?>;
             var auto = <?php
-            if (isset($_SESSION["auto"])) {
+            if(isset($_SESSION["auto"])) {
                 echo $_SESSION["auto"];
-            } ?>;
-            if (islog != "") {
+            }else{ echo "null"; } ?>;
+            if (islog != "" && islog != null) {
                 $('#shop').show();
                 $("#acc").show();
                 $("#logout").show();
@@ -47,7 +47,7 @@
                 $("#cad").hide();
                 $('#comprar').removeClass("disabled");
             }
-            if(auto == 1){
+            if(auto == 1  && auto != null){
                 $('#prodger').show();
             }
         })

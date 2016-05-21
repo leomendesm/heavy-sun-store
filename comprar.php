@@ -38,7 +38,9 @@ if($run2){?>
 </div>
     <?php
          }
-}else{  }
+}else{
+    echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+}
 include'footer.php';
 ?>
 <script src="https://checkout.stripe.com/checkout.js"></script>
@@ -54,6 +56,8 @@ include'footer.php';
     currency: 'BRL',
     email:'<?=$_SESSION['email']?>',
     token: function(token) {
+        $('#result').show();
+        $('#customButton').addClass('disabled');
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
     },
@@ -70,7 +74,7 @@ include'footer.php';
             success: function (result) {
                 console.log(result);
                 if (result == 1) {
-                    $('#result').show();
+
                 }else {
                     $('#error').show();
                 }

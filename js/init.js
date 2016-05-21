@@ -54,6 +54,7 @@
                     $('#shop').show();
                     $('#logout').show();
                     $('#prodger').remove();
+                    $('#comprar').removeClass('disabled');
                 }else if(result == 1) {
                     $('#mlogin').closeModal();
                     $('#cad').hide();
@@ -62,6 +63,7 @@
                     $('#shop').show();
                     $('#logout').show();
                     $('#prodger').show();
+                    $('#comprar').removeClass('disabled');
                 } else {
                     $('#erro').show();
                 }
@@ -72,7 +74,8 @@
     $('#comprar').click(function () {
         var idprod = $('#idprod').val();
         var tam = $('#selecttam').val();
-        if (tam != null) {
+        var disabled = $('#comprar').hasClass('disabled');
+        if (tam != null && disabled == false) {
             $.ajax({
                 url: "add_car.php",
                 type: "post",
