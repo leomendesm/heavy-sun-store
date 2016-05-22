@@ -6,23 +6,22 @@
         <div class="col s12 m9 l10">
             <div class="row">
                 <?php
-                        $sql = "SELECT * FROM produto limit 6";
+                        $sql = "SELECT * FROM produto ORDER BY RAND() limit 8";
                         $query = $con->query($sql);
                         while($fetch = $query->fetch_assoc()){
                         ?>
-                    <div class="col m4 l4">
+                    <div class="col m4 l3">
                         <div class="card medium">
                             <div class="card-image">
-                                <img src="uploads/<?= $fetch["foto"] ?>">
+                              <img class="responsive-img" src="uploads/<?= $fetch["foto"] ?>">
                             </div>
                             <div class="card-content">
-                                <h5><?= $fetch["nome"] ?></h5>
-                                <h5 class="orange-text">R$<?= $fetch["preco"] ?></h5>
+                                <p><span class="card-title activator grey-text text-darken-4 truncate"><?= $fetch["nome"] ?> - <?=  ucfirst($fetch["sexo"]) ?></span></p>
+                                <p class="">R$<?= $fetch["preco"] ?><br></p>
+                                <div class="red-text"><hr></div>
+                              <p><a href="produto.php?id=<?= $fetch["id"] ?>" class="orange-text text-darken-2 right">COMPRAR</a></p>
                             </div>
-                            <div class="card-action black">
-                                <a href="produto.php?id=<?= $fetch["id"] ?>" class="">COMPRAR</a>
-                            </div>
-                        </div>
+                          </div>
                     </div>
                     <?php }?>
             </div>

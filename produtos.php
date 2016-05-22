@@ -40,19 +40,34 @@ include('head.php');
                                     <textarea id="textarea1" class="materialize-textarea" name="desc"></textarea>
                                     <label for="textarea1">Descrição do produto</label>
                                 </div>
-
-
-                            </div>
-                            <div class="file-field input-field l6">
-                                <div class="btn  orange darken-3">
-                                    <span>Imagem</span>
-                                    <input type="file" name="foto" id="foto">
+                                <div class="input-field col s12 m12 l6">
+                                    <select id="sex" name="sexo">
+                                        <option value="" disabled selected>Selecionar</option>
+                                        <option value="masculino">masculino</option>
+                                        <option value="feminino">feminino</option>
+                                    </select>
+                                    <label for="sex">Escolha um sexo</label>
                                 </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" placeholder="Selecione uma imagem">
+                                <div class="input-field col s12 m12 l6">
+                                    <select id="cat" name="categoria">
+                                        <option value="" disabled selected>Selecionar</option>
+                                        <option value="camiseta">camiseta</option>
+                                        <option value="moleton">moleton</option>
+                                    </select>
+                                    <label for="cat">Selecione uma categoria</label>
                                 </div>
-                            </div>
-                            <input type="submit" value="Confirmar" class="waves-effect waves-light btn orange darken-3 right">
+                                </div>
+                                <div class="file-field input-field l6">
+                                    <div class="btn  orange darken-3">
+                                        <span>Imagem</span>
+                                        <input type="file" name="foto" id="foto">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Selecione uma imagem">
+                                    </div>
+                                </div>
+                                <input type="submit" value="Confirmar" class="waves-effect waves-light btn orange darken-3 right">
+
                         </form>
                     </div>
                 </div>
@@ -149,6 +164,7 @@ include('head.php');
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div id="form-atualiza-produto" class="col s12 m12 l6">
                     <br>
@@ -173,6 +189,7 @@ include('head.php');
                         </form>
                     </div>
                 </div>
+                <br>
                 <div id="form-remove-produto" class="col s12 m12 l6">
                     <h4>Remover Do Estoque</h4>
                     <div>

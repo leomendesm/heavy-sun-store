@@ -18,7 +18,7 @@ if($cont == 1){
             <div class="col l12">
                 <br>
                 <br>
-                <h5><?= $fetch['nome'] ?></h5>
+                <h5><?= $fetch['nome'] ?> - <?= ucfirst($fetch['sexo']) ?></h5>
                 <br>
                 <br>
             </div>

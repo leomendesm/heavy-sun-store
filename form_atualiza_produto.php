@@ -32,6 +32,20 @@ if(isset($_POST['prodaltera'])){
                             <textarea id="textarea1" class="materialize-textarea" name="desc"> <?=$valor['descri']?> </textarea>
                             <label for="textarea1">Descrição do produto</label>
                         </div>
+                        <div class="input-field col s12 m12 l6">
+                                    <select id="sex" name="sexo">
+                                        <option value="masculino" <?=($valor['sexo'] == "masculino")? "selected":""?>>masculino</option>
+                                        <option value="feminino" <?=($valor['sexo'] == "feminino")? "selected":""?>>feminino</option>
+                                    </select>
+                                    <label for="sex">Escolha um sexo</label>
+                                </div>
+                                <div class="input-field col s12 m12 l6">
+                                    <select id="cat" name="categoria">
+                                        <option value="camiseta" <?=($valor['Categoria'] == "camiseta")? "selected":""?>>camiseta</option>
+                                        <option value="moleton" <?=($valor['Categoria'] == "moleton")? "selected":""?>>moleton</option>
+                                    </select>
+                                    <label for="cat">Selecione uma categoria</label>
+                                </div>
                     </div>
                     <input type="hidden" name="id" value="<?=$valor['id']?>">
                     <input type="hidden" name="fotoantiga" value="<?=$valor['foto']?>">
