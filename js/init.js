@@ -5,12 +5,16 @@
         $('.modal-trigger').leanModal();
         $('select').material_select();
         $('ul.tabs').tabs();
-        $('#prodger').hide();
         $("#cep").mask("99999-999");
         $("#cpf").mask("999.999.999-99");
         $('#acc').hide();
+        $('#macc').hide();
         $('#shop').hide();
+        $('#mshop').hide();
         $('#logout').hide();
+        $('#mlogout').hide();
+        $('#prodger').hide();
+        $('#mprodger').hide();
         $("#erro").hide();
         $('#submit').click(function () {
             $('#prog_reg').show();
@@ -26,6 +30,7 @@
                 type: "post",
                 data: "nome=" + nome + "&senha=" + senha + "&email=" + email + "&csenha=" + csenha + "&end=" + end + "&cep=" + cep + "&cpf=" + cpf,
                 success: function (result) {
+                    console.log(result);
                     if (result == 1) {
                         $('#mcad').closeModal();
                         $('#mlogin').openModal();
@@ -49,20 +54,32 @@
                 if (result == 0) {
                     $('#mlogin').closeModal();
                     $('#cad').hide();
+                    $('#mcad').hide();
                     $('#log').hide();
+                    $('#mlog').hide();
                     $('#acc').show();
+                    $('#macc').show();
                     $('#shop').show();
+                    $('#mshop').show();
                     $('#logout').show();
+                    $('#mlogout').show();
                     $('#prodger').remove();
+                    $('#mprodger').remove();
                     $('#comprar').removeClass('disabled');
                 }else if(result == 1) {
                     $('#mlogin').closeModal();
                     $('#cad').hide();
+                    $('#mcadastro').hide();
                     $('#log').hide();
+                    $('#mlog').hide();
                     $('#acc').show();
+                    $('#macc').show();
                     $('#shop').show();
+                    $('#mshop').show();
                     $('#logout').show();
+                    $('#mlogout').show();
                     $('#prodger').show();
+                    $('#mprodger').show();
                     $('#comprar').removeClass('disabled');
                 } else {
                     $('#erro').show();

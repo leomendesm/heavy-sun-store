@@ -35,20 +35,29 @@
                         <li id="shop"><a href="cart.php"><i class="material-icons white-text">shopping_cart</i></a></li>
                     </ul>
                 </div>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a  href="index.php">HOME</a></li>
+                    <li id="mprodger"><a class="" href="produtos.php">GERENCIAR PRODUTOS</a></li>
+                    <li id="macc"><a class="" href="alterar.php">MINHA CONTA</a></li>
+                    <li id="mlogout"><a class="" href="logout.php">LOGOUT</a></li>
+                    <li id="mlog"><a href="#mlogin" class="modal-trigger ">LOGIN</a></li>
+                    <li id="mcadastro"><a href="#mcad" class="modal-trigger orange-text">CADASTRE-SE</a></li>
+                    <li id="mshop"><a href="cart.php"><i class="material-icons">shopping_cart</i></a></li>
+                </ul>
             </nav>
-
+            
             <ul id="nav-mobile" class="side-nav fixed">
                 <ul id="slide-out" class="side-nav fixed">
                     <li class="logo black center">
                         <a href="index.php" id="logo-container"><img src="img/logo.png"></a>
                         <br>
                     </li>
-                    <li><a class="black white-text" href="#!"><b>MASCULINO</b></a></li>
-                    <li><a href="#!">CAMISETAS</a></li>
-                    <li><a href="#!">BLUSA MOLETOM</a></li>
-                    <li><a class="black white-text" href="#!"><b>FEMININO</b></a></li>
-                    <li><a href="#!">CAMISETAS</a></li>
-                    <li><a href="#!">BLUSA MOLETOM</a></li>
+                    <li><a class="black white-text" href="mostrarprodutos.php?sexo=masculino"><b>MASCULINO</b></a></li>
+                    <li><a href="mostrarprodutos.php?sexo=masculino&categoria=camiseta">CAMISETAS</a></li>
+                    <li><a href="mostrarprodutos.php?sexo=masculino&categoria=moleton">BLUSA MOLETOM</a></li>
+                    <li><a class="black white-text" href="mostrarprodutos.php?sexo=feminino"><b>FEMININO</b></a></li>
+                    <li><a href="mostrarprodutos.php?sexo=feminino&categoria=camiseta">CAMISETAS</a></li>
+                    <li><a href="mostrarprodutos.php?sexo=feminino&categoria=moleton">BLUSA MOLETOM</a></li>
                 </ul>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>

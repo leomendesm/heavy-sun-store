@@ -1,23 +1,8 @@
 </main>
 
-<footer class="page-footer black" style="position: -webkit-sticky;">
-    <div class="container">
-        <div class="row">
-            <div class="col l9 m9 s12">
-                <h5 class="white-text">HEAVY SUN CLOTHING</h5>
-                <p class="grey-text text-lighten-4">Descrição</p>
-            </div>
-            <div class="col l3 m3 offset-m3">
-                <ul>
-                    <li><a class="white-text" href="/login">Login</a></li>
-                    <li><a class="white-text" href="/contact_us">Carrinho</a></li>
-                    <li><a class="white-text" href="/about">Sobre</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<footer class="page-footer white">
     <div class="footer-copyright grey darken-4">
-        <div class="container">
+        <div class="container center">
             Todos os direitos reservados
         </div>
     </div>
