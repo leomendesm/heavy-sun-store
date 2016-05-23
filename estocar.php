@@ -1,5 +1,5 @@
 <?php
-    include "conecta.php";
+    include "head.php";
     if(!isset($_SESSION['id'])){
         echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
     }
@@ -20,4 +20,5 @@
     }else{
      echo "qwe";
     }
+    include'footer.php';
 ?>
