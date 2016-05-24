@@ -83,3 +83,6 @@ body {
 main {
     flex: 1 0 auto;
 }
+#logo-container{
+    padding: 25px;
+}

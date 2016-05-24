@@ -35,7 +35,7 @@
                         $('#mcad').closeModal();
                         $('#mlogin').openModal();
                     } else {
-                        $('#erro').show();
+                        Materialize.toast('Campos incorretos ou já existem cadastros semelhantes!', 3000);
                     }
                 }
             })
@@ -45,10 +45,12 @@
     $('#logar').click(function () {
         var senha = $('#lsenha').val();
         var email = $('#lemail').val();
+        var remember = $('#remember').is(':checked');
+        console.log(remember);
         $.ajax({
             url: "logar.php",
             type: "post",
-            data: "senha=" + senha + "&email=" + email,
+            data: "senha=" + senha + "&email=" + email + "&remember=" + remember,
             success: function (result) {
                 console.log(result);
                 if (result == 0) {

@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include "conecta.php";
     if (!empty($_POST)){
         $nome = $_POST["nome"];

@@ -15,8 +15,12 @@
             $_SESSION['cep']= $fetch["cep"];
             $_SESSION['cpf']= $fetch["cpf"];
             $_SESSION['auto']= $fetch["auto"];
+            if($_POST['remember'] == 'true'){
+                setcookie('user', $email, time() + 3*24*60*60);
+                setcookie('senha', $senha, time() + 3*24*60*60);
+            }
             echo $_SESSION['auto'];
-            }else{
+        }else{
            echo 'erro';
 	   }
     }else{
