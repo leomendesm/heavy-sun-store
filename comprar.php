@@ -4,11 +4,11 @@ if(!isset($_SESSION['id'])){
         echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
     }
 $id_user = $_SESSION['id'];
-$sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id_user.' and c.id_prod = p.id';
+$sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id_user.' and c.id_prod = p.id and c.comprado = 0';
 $run = $con->query($sql);
 $total = 0;
 while($fetch = $run->fetch_assoc()){
-    $total += $fetch['preco'];
+    $total += $fetch['preco']*$fetch['quantia'];
 }
 if($total != 0){
 $sql2 = "insert into compra(id_user,valor) values('$id_user', '$total')";
@@ -25,7 +25,7 @@ if($run2){?>
     <li class="collection-item avatar">
       <img src="uploads/<?=$fetch['foto']?>" alt="" class="circle">
       <span class="title"><?=$fetch['nome']?> - <b><?=$fetch['tamanho']?></b></span>
-      <p class="secondary-content black-text">R$<?=$fetch['preco']?></p>
+      <p class="secondary-content black-text">R$<?=$fetch['preco']*$fetch['quantia']?></p>
     </li>
 <?php
     }
@@ -58,16 +58,8 @@ include'footer.php';
     token: function(token) {
         $('#result').show();
         $('#customButton').addClass('disabled');
-      // You can access the token ID with `token.id`.
-      // Get the token ID to your server-side code for use.
-    },
-    close:function(){
-    }
-  });
-
-  $('#customButton').on('click', function(e) {
-    var idcompra = <?=$cod?>;
-    $.ajax({
+        var idcompra = <?=$cod?>;
+        $.ajax({
             url: "finalizarcompra.php",
             type: "post",
             data: "idcompra="+ idcompra,
@@ -79,7 +71,13 @@ include'footer.php';
                     $('#error').show();
                 }
             }
-        })
+        });
+    },
+    close:function(){
+    }
+  });
+
+  $('#customButton').on('click', function(e) {
     handler.open({
       name: 'Heavy Sun Clothing',
       description: 'Heavy Sun Clothing',

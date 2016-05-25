@@ -5,6 +5,9 @@
         $('.modal-trigger').leanModal();
         $('select').material_select();
         $('ul.tabs').tabs();
+        $('.collapsible').collapsible({
+          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
         $("#cep").mask("99999-999");
         $("#cpf").mask("999.999.999-99");
         $('#acc').hide();

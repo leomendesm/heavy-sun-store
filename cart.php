@@ -4,7 +4,7 @@ include('head.php');
        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
     }
 $id = $_SESSION['id'];
-$sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id.' and c.id_prod = p.id';
+$sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id.' and c.id_prod = p.id and c.comprado = 0';
 $run = $con->query($sql);
 $custo= 0;
 ?>
