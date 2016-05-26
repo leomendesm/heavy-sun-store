@@ -135,7 +135,7 @@
                             <div class="input-field col s12">
                                 <p>
                                     <input type="checkbox" id="remember" name="remember" value="true" />
-                                    <label for="test6">Lembrar-se</label>
+                                    <label for="remember">Lembrar-se</label>
                                 </p>
                             </div>
                         </div>
