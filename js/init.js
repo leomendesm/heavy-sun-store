@@ -20,7 +20,6 @@
         $('#mprodger').hide();
         $("#erro").hide();
         $('#submit').click(function () {
-            $('#prog_reg').show();
             var nome = $('#nome').val();
             var email = $('#email').val();
             var senha = $('#pass').val();
@@ -55,7 +54,6 @@
             type: "post",
             data: "senha=" + senha + "&email=" + email + "&remember=" + remember,
             success: function (result) {
-                console.log(result);
                 if (result == 0) {
                     $('#mlogin').closeModal();
                     $('#cad').hide();
@@ -87,7 +85,7 @@
                     $('#mprodger').show();
                     $('#comprar').removeClass('disabled');
                 } else {
-                    $('#erro').show();
+                    Materialize.toast('Usuário ou senha incorretos!', 3000);
                 }
             }
         })
@@ -112,6 +110,10 @@
                 }
             })
             return false;
+        }else if(disabled == true){
+            Materialize.toast('Inicie uma sessão para comprar!', 3000);
+        }else{
+            Materialize.toast('Selecione um tamanho!', 3000);
         }
     });
 })(jQuery);
