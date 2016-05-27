@@ -9,13 +9,6 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `heavy`
 --
@@ -345,6 +338,25 @@ DROP TABLE IF EXISTS `top10`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `top10` AS select `u`.`id` AS `id`,`u`.`email` AS `email`,`u`.`senha` AS `senha`,`u`.`cpf` AS `cpf`,`u`.`nome` AS `nome`,`u`.`end` AS `end`,`u`.`cep` AS `cep`,`u`.`auto` AS `auto`,sum(`c`.`valor`) AS `tot` from (`compra` `c` join `user` `u` on((`c`.`id_user` = `u`.`id`))) group by `c`.`id_user` order by `c`.`valor` desc limit 10;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+# Privileges for `admin`@`localhost`
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD '*215869E2F306F73799B18C7B165D73CD0B0AD18D' WITH GRANT OPTION;
+
+
+# Privileges for `normal`@`localhost`
+
+GRANT USAGE ON *.* TO 'normal'@'localhost' IDENTIFIED BY PASSWORD '*906F68FFF5081ABBE2C1715190AE8C20A6C8367E';
+
+GRANT ALL PRIVILEGES ON `heavy`.* TO 'normal'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `heavy`.`carrinho` TO 'normal'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE ON `heavy`.`estoque` TO 'normal'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE ON `heavy`.`compra` TO 'normal'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `heavy`.`user` TO 'normal'@'localhost';
+
+GRANT SELECT ON `heavy`.`top10` TO 'normal'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE ON `heavy`.`produto` TO 'normal'@'localhost';
