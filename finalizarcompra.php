@@ -1,7 +1,7 @@
 <?php
 include('conecta.php');
 if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
 if(!empty($_POST)){
 $id = $_POST['idcompra'];
@@ -10,6 +10,6 @@ $run = $con->query($sql);
 echo 1;
 exit;
 }else{
-    header('location: index.php');
+    header('location: home');
 }
 ?>

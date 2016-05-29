@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^produtos/([^/]*)/([^/]*)$ mostrarprodutos.php?sexo=$1&categoria=$2 [L]
+RewriteRule ^produtos/([^/]*)$ mostrarprodutos.php?sexo=$1 [L]
+RewriteRule ^produto/([^/]*)$ produto.php?id=$1 [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^gerenciar$ produtos.php [L]
+RewriteRule ^alterar$ alterar.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^cart$ cart.php [L]
+RewriteRule ^comprar$ comprar.php [L]
+</IfModule>

@@ -1,7 +1,7 @@
 <?php
 include('head.php');
     if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
 $id = $_GET['id'];
 $sql = "select * from carrinho where id_car = $id";

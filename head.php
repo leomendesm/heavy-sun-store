@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
         <title>Heavy Sun Clothing</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <link href="/projeto/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <link href="/projeto/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
     </head>
 
@@ -27,14 +27,13 @@
                 </div>
                 <div class="nav-wrapper black">
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="white-text" href="index.php">HOME</a></li>
-                        <li id="prodger"><a class="white-text" href="produtos.php">GERENCIAR</a></li>
-                        <li id="acc"><a class="white-text" href="alterar.php">MINHA CONTA</a></li>
+                        <li><a class="white-text" href="/projeto/home">HOME</a></li>
+                        <li id="prodger"><a class="white-text" href="/projeto/gerenciar">GERENCIAR</a></li>
+                        <li id="acc"><a class="white-text" href="/projeto/alterar">MINHA CONTA</a></li>
                         <li id="logout"><a class="white-text" href="logout.php">LOGOUT</a></li>
                         <li id="log"><a href="#mlogin" class="modal-trigger white-text">LOGIN</a></li>
                         <li id="cad"><a href="#mcad" class="modal-trigger orange-text">CADASTRE-SE</a></li>
-                        <li><a href="#"><i class="material-icons white-text">search</i></a></li>
-                        <li id="shop"><a href="cart.php"><i class="material-icons white-text">shopping_cart</i></a></li>
+                        <li id="shop"><a href="/projeto/cart" class="white-text"><i class="material-icons left">shopping_cart</i>Carrinho</a></li>
                     </ul>
                 </div>
                 <ul id="nav-mobile" class="side-nav">
@@ -44,23 +43,23 @@
                     <li id="mlogout"><a class="" href="logout.php">LOGOUT</a></li>
                     <li id="mlog"><a href="#mlogin" class="modal-trigger ">LOGIN</a></li>
                     <li id="mcadastro"><a href="#mcad" class="modal-trigger orange-text">CADASTRE-SE</a></li>
-                    <li id="mshop"><a href="cart.php"><i class="material-icons">shopping_cart</i></a></li>
+                    <li id="mshop"><a href="cart.php">Carrinho</a></li>
                 </ul>
             </nav>
             
             <ul id="nav-mobile" class="side-nav fixed">
                 <ul id="slide-out" class="side-nav fixed">
                     <li class="logo black center">
-                        <a href="index.php" id="logo-container"><img src="img/logo.png"></a>
+                        <a href="index.php" id="logo-container"><img src="/projeto/img/logo.png"></a>
                         <br>
                         <br>
                     </li>
-                    <li><a class="black white-text" href="mostrarprodutos.php?sexo=masculino"><b>MASCULINO</b></a></li>
-                    <li><a href="mostrarprodutos.php?sexo=masculino&categoria=camiseta">CAMISETAS</a></li>
-                    <li><a href="mostrarprodutos.php?sexo=masculino&categoria=moleton">BLUSA MOLETOM</a></li>
-                    <li><a class="black white-text" href="mostrarprodutos.php?sexo=feminino"><b>FEMININO</b></a></li>
-                    <li><a href="mostrarprodutos.php?sexo=feminino&categoria=camiseta">CAMISETAS</a></li>
-                    <li><a href="mostrarprodutos.php?sexo=feminino&categoria=moleton">BLUSA MOLETOM</a></li>
+                    <li><a class="black white-text" href="/projeto/produtos/masculino"><b>MASCULINO</b></a></li>
+                    <li><a href="/projeto/produtos/masculino/camiseta">CAMISETAS</a></li>
+                    <li><a href="/projeto/produtos/masculino/moleton">BLUSA MOLETOM</a></li>
+                    <li><a class="black white-text" href="/projeto/produtos/feminino"><b>FEMININO</b></a></li>
+                    <li><a href="/projeto/produtos/feminino/camiseta">CAMISETAS</a></li>
+                    <li><a href="/projeto/produtos/feminino/moleton">BLUSA MOLETOM</a></li>
                 </ul>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>

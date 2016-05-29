@@ -1,7 +1,7 @@
 <?php
 include('head.php');
 if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
 $id_user = $_SESSION['id'];
 $sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id_user.' and c.id_prod = p.id and c.comprado = 0';
@@ -39,7 +39,7 @@ if($run2){?>
     <?php
          }
 }else{
-    echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+    echo"<script>location.href = 'http://localhost/projeto/home'</script>";
 }
 include'footer.php';
 ?>

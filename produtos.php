@@ -4,7 +4,7 @@
 <?php
 include('head.php');
     if(!isset($_SESSION['auto'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }else{
         if($_SESSION['auto'] != 1){
         echo"<script>location.href = 'http://localhost/projeto/index.php";

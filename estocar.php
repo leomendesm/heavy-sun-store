@@ -1,7 +1,7 @@
 <?php
     include "head.php";
     if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
     if (!empty($_POST)){
         $idprod = $_POST["idprod"];

@@ -4,7 +4,7 @@
 <?php
 include('head.php');
         if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
 if(isset($_POST['idestoque'])){
     $idestoque = $_POST['idestoque'];

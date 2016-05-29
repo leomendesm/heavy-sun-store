@@ -14,10 +14,10 @@
         $_SESSION['cep']= $fetch["cep"];
         $_SESSION['cpf']= $fetch["cpf"];
         $_SESSION['auto']= $fetch["auto"];
-        header('location: index.php');
+        header('location: home');
     }else{
         setcookie("user", "" , time());    
         setcookie("senha","" , time());
-        header('location: index.php');
+        header('location: home');
     }
 ?>

@@ -1,7 +1,7 @@
 <?php
 include("head.php");
 if(!isset($_GET['id'])){
-    header('location: index.php');
+    header('location: home');
 }
 $id = $_GET["id"];
 $sql = "select * from produto where id = $id";
@@ -16,7 +16,7 @@ if($cont == 1){
     <div class="container">
         <div class="row">
             <div class="col s12 m8 l8 left">
-                <img class="materialboxed responsive-img" width="400" src="uploads/<?= $fetch['foto'] ?>">
+                <img class="materialboxed responsive-img" width="400" src="/projeto/uploads/<?= $fetch['foto'] ?>">
             </div>
             <div class="col s12 m4 l4 center">
             <br>

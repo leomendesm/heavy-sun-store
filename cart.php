@@ -1,7 +1,7 @@
 <?php
 include('head.php');
     if(!isset($_SESSION['id'])){
-       echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+       echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
 $id = $_SESSION['id'];
 $sql = 'select c.*,p.* from carrinho as c inner join produto as p on c.id_user = '.$id.' and c.id_prod = p.id and c.comprado = 0';
@@ -41,7 +41,7 @@ while($valor = $run->fetch_assoc()){
 <?php
 } ?>
     </ul>
-    <form action="comprar.php" method="post">
+    <form action="comprar" method="post">
     <h5 class="right"><b>Valor total :</b> R$<?=$custo?></h5><br><br><br>
     <input type="submit" value="Confirmar" class="waves-effect waves-light btn orange darken-3 right <?=($custo == 0)? 'disabled':''?>"><br><br><br>
     </form>
@@ -51,7 +51,6 @@ while($valor = $run->fetch_assoc()){
         if(isset($_GET['erro'])){
         if($_GET['erro'] == 1){
              echo"<script> Materialize.toast('O Estoque não possui a quantia desejada!', 3000);window.history.pushState('oi', 'Heavy Sun Clothing', '/projeto/cart.php');</script>";
-
         }
     }
 ?>

@@ -1,7 +1,7 @@
 <?php
     include "head.php";
     if(!isset($_SESSION['id'])){
-        echo"<script>location.href = 'http://localhost/projeto/index.php'</script>";
+        echo"<script>location.href = 'http://localhost/projeto/home'</script>";
     }
     if (!empty($_POST)){
         $nome = $_POST["nome"];
@@ -32,7 +32,7 @@
             echo "Falha ao atualizar produto";
         }
     }else{
-     header('location: index.php');
+     header('location: home');
     }
     include('footer.php');
 ?>

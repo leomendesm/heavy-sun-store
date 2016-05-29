@@ -16,10 +16,10 @@
                               <img class="responsive-img" src="uploads/<?= $fetch["foto"] ?>">
                             </div>
                             <div class="card-content">
-                                <a href="produto.php?id=<?= $fetch["id"] ?>"><p><span class="card-title activator grey-text text-darken-4 truncate"><?= $fetch["nome"] ?> - <?=  ucfirst($fetch["sexo"]) ?></span></p></a>
+                                <a href="/projeto/produto/<?= $fetch["id"] ?>"><p><span class="card-title activator grey-text text-darken-4 truncate"><?= $fetch["nome"] ?> - <?=  ucfirst($fetch["sexo"]) ?></span></p></a>
                                 <p class="">R$<?= $fetch["preco"] ?><br></p>
                                 <div class="red-text"><hr></div>
-                              <p><a href="produto.php?id=<?= $fetch["id"] ?>" class="orange-text text-darken-2 right">COMPRAR</a></p>
+                              <p><a href="/projeto/produto/<?= $fetch["id"] ?>" class="orange-text text-darken-2 right">COMPRAR</a></p>
                             </div>
                           </div>
                     </div>

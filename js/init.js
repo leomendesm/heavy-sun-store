@@ -28,7 +28,7 @@
             var cep = $('#cep').val();
             var cpf = $('#cpf').val();
             $.ajax({
-                url: "register.php",
+                url: "/projeto/register.php",
                 type: "post",
                 data: "nome=" + nome + "&senha=" + senha + "&email=" + email + "&csenha=" + csenha + "&end=" + end + "&cep=" + cep + "&cpf=" + cpf,
                 success: function (result) {
@@ -50,7 +50,7 @@
         var remember = $('#remember').is(':checked');
         console.log(remember);
         $.ajax({
-            url: "logar.php",
+            url: "/projeto/logar.php",
             type: "post",
             data: "senha=" + senha + "&email=" + email + "&remember=" + remember,
             success: function (result) {
@@ -93,11 +93,13 @@
     });
     $('#comprar').click(function () {
         var idprod = $('#idprod').val();
+        console.log(idprod);
         var tam = $('#selecttam').val();
+        console.log(tam);
         var disabled = $('#comprar').hasClass('disabled');
         if (tam != null && disabled == false) {
             $.ajax({
-                url: "add_car.php",
+                url: "/projeto/add_car.php",
                 type: "post",
                 data: "idprod=" + idprod + "&tamanho=" + tam,
                 success: function (result) {
