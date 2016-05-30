@@ -12,19 +12,17 @@
         $end = $_POST["aend"];
         $cep = $_POST["acep"];
         $cpf = $_POST["acpf"];
-        echo $nome." ".$email." ".$end." ".$cep." ".$cpf."<br>";
         if($senha == $csenha && $senha != null && $csenha != null){
-                $senha = md5(md5(md5($_POST['asenha'])));
-                $query = "UPDATE user SET email = '$email', senha = '$senha', cpf '$cpf', nome = '$nome' end = '$end', cep = '$cep'  WHERE id = $id";
-                $run2 = $con->query($query);
-                echo "atualizado";
-                exit;
-            }else{
-               $query = "UPDATE user SET email = '$email', cpf = '$cpf', nome = '$nome', end = '$end', cep = '$cep' WHERE id = $id";
-                $run2 = $con->query($query);
-                echo "atualizado";
-            }
+            $senha = md5(md5(md5($_POST['asenha'])));
+            $query = "UPDATE user SET email = '$email', senha = '$senha', cpf = '$cpf', nome = '$nome', end = '$end', cep = '$cep'  WHERE id = $id";
+            $run2 = $con->query($query);
+            if($run2){header("location: home");}
         }else{
-    header("location: index.php");
+            $query = "UPDATE user SET email = '$email', cpf = '$cpf', nome = '$nome', end = '$end', cep = '$cep' WHERE id = $id";
+            $run2 = $con->query($query);
+            if($run2){header("location: home");}
+        }
+    }else{
+        header("location: home");
     }
 ?>
