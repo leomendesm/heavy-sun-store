@@ -37,7 +37,7 @@
                     </ul>
                 </div>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a  href="index.php">HOME</a></li>
+                    <li><a  href="/projeto/home">HOME</a></li>
                     <li id="mprodger"><a class="" href="produtos.php">GERENCIAR</a></li>
                     <li id="macc"><a class="" href="alterar.php">MINHA CONTA</a></li>
                     <li id="mlogout"><a class="" href="logout.php">LOGOUT</a></li>
@@ -46,11 +46,11 @@
                     <li id="mshop"><a href="cart.php">Carrinho</a></li>
                 </ul>
             </nav>
-            
+
             <ul id="nav-mobile" class="side-nav fixed">
                 <ul id="slide-out" class="side-nav fixed">
                     <li class="logo black center">
-                        <a href="index.php" id="logo-container"><img src="/projeto/img/logo.png"></a>
+                        <a href="/projeto/home" id="logo-container"><img src="/projeto/img/logo.png"></a>
                         <br>
                         <br>
                     </li>
