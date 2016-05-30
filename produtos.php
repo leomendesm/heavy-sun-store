@@ -14,36 +14,53 @@ include('head.php');
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
-               <li class="tab col s3"><a class="black-text" href="#compras">Compras</a></li>
+                <li class="tab col s3"><a class="black-text" href="#compras">Compras</a></li>
                 <li class="tab col s3"><a class="active black-text" href="#produto">Produto</a></li>
                 <li class="tab col s3"><a class="black-text" href="#estoque">Estoque</a></li>
+                <li class="tab col s3"><a class="black-text" href="#top10">Top 10</a></li>
                 <div class="indicator black" style="z-index:1"></div>
             </ul>
+        </div>
+        <div id="top10" class="col s12">
+          <center><h4>TOP 10 - Clientes</h4></center>
+          <ul class="collection">
+          <?php
+          $sqltop = "select * from top10";
+          $runtop = $con->query($sqltop);
+          $cont = 1;
+          while($top = $runtop->fetch_assoc()){
+          ?>
+            <li class="collection-item"><b><?=$cont?></b> -<?=$top['id']?>- <?=$top['nome']?> - <?=$top['email']?></li>
+          <?php
+          $cont++;
+          }
+          ?>
+        </ul>
         </div>
         <div id="compras" class="col s12">
         <?php
             $compras = "select * from compra";
             $rodar = $con->query($compras);
-            
+
             echo '<ul class="collapsible" data-collapsible="accordion">';
-            
+
             while($fetch = $rodar->fetch_assoc()){
                 $id = $fetch['id'];
                 echo '<li>
-              <div class="collapsible-header"><i class="material-icons">filter_drama</i>Compra #'.$id.'</div> 
+              <div class="collapsible-header"><i class="material-icons">filter_drama</i>Compra #'.$id.'</div>
               <div class="collapsible-body">';
                 echo '<ul class="collection">';
                 $prods = "select c.*,p.* from carrinho as c inner join produto as p on c.id_user = ".$fetch['id_user']." and c.id_prod = p.id and c.comprado = 1 and id_compra = '".$fetch['id']."'";
                 $run = $con->query($prods);
-                
+
                 while($valor = $run->fetch_assoc()){
                 ?>
                 <li class="collection-item avatar">
                     <img src="uploads/<?=$valor['foto']?>" alt="" class="circle">
-                    <span class="title"><?=$valor['nome']?> - <b><?=$valor['tamanho']?></b></span>   
-                    <p>Quantia : <?=$valor['quantia']?></p>         
+                    <span class="title"><?=$valor['nome']?> - <b><?=$valor['tamanho']?></b></span>
+                    <p>Quantia : <?=$valor['quantia']?></p>
                     <p class="secondary-content black-text"> R$<?= $valor['preco']*$valor['quantia']?><br></p>
-                </li>    
+                </li>
                 <?php }
                 $selecionauser = "select * from user where id = '".$fetch['id_user']."'";
                 $rodaruser= $con->query($selecionauser);
@@ -52,7 +69,7 @@ include('head.php');
                 <li class="collection-item">
                     Nome : <?=$user['nome']?><br>
                     Endereço : <?=$user['end']?> CEP : <?=$user['cep']?>
-                </li> 
+                </li>
                 <?php
                 echo "</div></li>";
             }
@@ -106,11 +123,11 @@ include('head.php');
                                     </div>
                                 </div>
                                 <input type="submit" value="Confirmar" class="waves-effect waves-light btn orange darken-3 right">
-
                         </form>
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div id="form-atualiza-produto" class="col s12 l6">
                     <br>
@@ -158,7 +175,12 @@ include('head.php');
                         </form>
                     </div>
                 </div>
+                <br>
             </div>
+            <div class="container">
+            <a href="desconto.php" class="waves-effect waves-light left orange btn darken-3 margin">10% de desconto</a>
+            <a href="preconormal.php" class="waves-effect waves-light right orange btn darken-3 margin">Voltar ao valor normal</a>
+          </div>
         </div>
         <div id="estoque" class="col s12">
             <div class="row">

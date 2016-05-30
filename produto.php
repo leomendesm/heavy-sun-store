@@ -15,16 +15,16 @@ if($cont == 1){
 ?>
     <div class="container">
         <div class="row">
-            <div class="col s12 m8 l8 left">
+            <div class="col s12 m8 l7 left">
                 <img class="materialboxed responsive-img" width="400" src="/projeto/uploads/<?= $fetch['foto'] ?>">
             </div>
-            <div class="col s12 m4 l4 center">
+            <div class="col s12 m4 l5 center">
             <br>
             <h4><?= $fetch['nome'] ?> - <?= ucfirst($fetch['sexo']) ?></h4>
-            <div class="hide-on-med-and-down"><br><br><h5>Detalhes do produto</h5>
+            <div class="hide-on-med-and-down"><br><h5>Detalhes do produto</h5>
                 <p>
                     <?= $fetch['descri'] ?>
-                </p> <br></div>
+                </p></div>
                 <h3 class="orange-text darken-3"><b>R$<?= $fetch['preco'] ?></b></h3> Escolha um <b>TAMANHO</b>
                 <div class="input-field">
                     <select id="selecttam">
@@ -57,4 +57,3 @@ echo"<center><h3>Produto não encontrado</h3></center>";
 }
     include("footer.php");
 ?>
-
